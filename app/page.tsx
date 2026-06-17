@@ -1,6 +1,25 @@
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
-export default function Page() {
+import { supabase } from "@/lib/supabase";
+// import { Course } from "@/types/course";
+
+async function getCourses(): Promise<any[]> {
+  const { data, error } = await supabase
+    .from("courses")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching courses:", error);
+    return [];
+  }
+
+  return data as any[];
+}
+export default async function Page() {
+  const courses = await getCourses();
+  console.log({ courses });
+
   return (
     <DashboardLayout>
       <section className="grid grid-cols-4 gap-4">
