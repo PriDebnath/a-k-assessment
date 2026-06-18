@@ -37,12 +37,16 @@ export default async function Page() {
         <AnimatedItem>
           <HeroTile />
         </AnimatedItem>
+        
+            {/* <div className="flex flex-wrap gap-2"> */}
       <AnimatedGrid>
         {courses.map((course) => (
           <AnimatedItem key={course.id}>
             <CourseCard course={course} />
           </AnimatedItem>
         ))}
+            {/* </div> */}
+
       </AnimatedGrid>
 
       {/* <AnimatedGrid> */}

@@ -9,7 +9,10 @@ export default function DashboardLayout({
     <div className="flex">
       <Sidebar />
 
-      <main className="flex-1 p-6">{children}</main>
+      <main className="flex flex-col p-6 gap-2">
+          {/* <main className="flex-1 p-6 pb-20 md:pb-6"> */}
+        {children}
+        </main>
     </div>
   );
 }

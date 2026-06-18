@@ -23,7 +23,7 @@ export default function Sidebar() {
         <Fragment>
             {/* for DESKTOP  */}
             <nav className={
-                "hidden lg:flex h-screen w-16  bg-neutral-900 border-r border-neutral-800 flex-col py-4 gap-2"
+                "hidden lg:flex h-screen w-16  bg-neutral-900 border-r border-neutral-800 flex-col items-center py-4 gap-4"
                     + (expanded ? " w-48 " : " w-16 ")
             }
             >
