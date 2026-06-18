@@ -1,15 +1,17 @@
 "use client";
 
 import { Course } from "@/types";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import * as Icons from "lucide-react"; // important to display icon dynamacly
 
 interface Props {
     course: Course;
+    delay: number;
 }
 
-export default function CourseCard({ course }: Props) {
+export default function CourseCard({ course, delay }: Props) {
     const Icon = (Icons as any)[course.icon_name] || Icons.Book;
+
     return (
         <motion.article
             initial="initial"
@@ -47,7 +49,7 @@ export default function CourseCard({ course }: Props) {
                         <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${course.progress}%` }}
-                            transition={{ duration: 2 }}
+                            transition={{ duration: Math.ceil (2 + delay) }}
                             className="h-full bg-indigo-500"
                         />
                     </div>

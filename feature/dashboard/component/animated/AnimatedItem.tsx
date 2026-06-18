@@ -11,9 +11,7 @@ interface Props {
 export default function AnimatedItem({
   children,
   delay = 0
-}: Props) {
-  console.log({delay});
-  
+}: Props) {  
   return (
     <motion.div
       variants={{

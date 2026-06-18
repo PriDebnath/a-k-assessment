@@ -1,11 +1,11 @@
 import React from "react";
 
-interface Props{
-text: string;
-children : React.ReactNode
+interface Props {
+  text: string;
+  children: React.ReactNode
 }
 
-export default function Tooltip({text, children}: Props) {
+export default function Tooltip({ text, children }: Props) {
   return (
     <div className="relative group  w-full">
       {children}
