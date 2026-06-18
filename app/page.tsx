@@ -1,3 +1,8 @@
+import ActivityTile from "@/components/dashboard/ActivityTile";
+import AnimatedGrid from "@/components/dashboard/AnimatedGrid";
+import AnimatedItem from "@/components/dashboard/AnimatedItem";
+import CourseCard from "@/components/dashboard/CourseCard";
+import HeroTile from "@/components/dashboard/HeroTile";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
 import { supabase } from "@/lib/supabase";
@@ -22,12 +27,31 @@ export default async function Page() {
 
   return (
     <DashboardLayout>
-      <section className="grid grid-cols-4 gap-4">
+      {/* <section className="grid grid-cols-4 gap-4">
         <div className="col-span-2 h-40 bg-neutral-900 rounded-2xl" />
         <div className="h-40 bg-neutral-900 rounded-2xl" />
         <div className="h-40 bg-neutral-900 rounded-2xl" />
         <div className="col-span-4 h-40 bg-neutral-900 rounded-2xl" />
-      </section>
+      </section> */}
+
+        <AnimatedItem>
+          <HeroTile />
+        </AnimatedItem>
+      <AnimatedGrid>
+        {courses.map((course) => (
+          <AnimatedItem key={course.id}>
+            <CourseCard course={course} />
+          </AnimatedItem>
+        ))}
+      </AnimatedGrid>
+
+      {/* <AnimatedGrid> */}
+        <AnimatedItem >
+          <ActivityTile />
+
+        </AnimatedItem>
+      {/* </AnimatedGrid> */}
+
     </DashboardLayout>
   );
 }
