@@ -1,10 +1,11 @@
-import ActivityTile from "@/components/dashboard/ActivityTile";
-import AnimatedGrid from "@/components/dashboard/AnimatedGrid";
-import AnimatedItem from "@/components/dashboard/AnimatedItem";
-import CourseCard from "@/components/dashboard/CourseCard";
-import HeroTile from "@/components/dashboard/HeroTile";
-import DashboardLayout from "@/components/layout/DashboardLayout";
 
+
+import ActivityTile from "@/feature/dashboard/component/ActivityTile";
+import AnimatedGrid from "@/feature/dashboard/component/animated/AnimatedGrid";
+import AnimatedItem from "@/feature/dashboard/component/animated/AnimatedItem";
+import CourseCard from "@/feature/dashboard/component/course/CourseCard";
+import HeroTile from "@/feature/dashboard/component/HeroTile";
+import DashboardLayout from "@/feature/dashboard/layout/DashboardLayout";
 import { supabase } from "@/lib/supabase";
 // import { Course } from "@/types/course";
 
@@ -45,8 +46,6 @@ export default async function Page() {
             <CourseCard course={course} />
           </AnimatedItem>
         ))}
-            {/* </div> */}
-
       </AnimatedGrid>
 
       {/* <AnimatedGrid> */}
