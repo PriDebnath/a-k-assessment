@@ -3,11 +3,17 @@
 
 import { motion } from "framer-motion";
 
+interface Props {
+  delay?: number;
+  children: React.ReactNode;
+}
+
 export default function AnimatedItem({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+  delay = 0
+}: Props) {
+  console.log({delay});
+  
   return (
     <motion.div
       variants={{
@@ -19,6 +25,7 @@ export default function AnimatedItem({
             type: "spring",
             stiffness: 120,
             damping: 20,
+            delay: delay
           },
         },
       }}

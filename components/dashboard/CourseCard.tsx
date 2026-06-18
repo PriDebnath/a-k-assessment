@@ -9,24 +9,32 @@ interface Props {
 }
 
 export default function CourseCard({ course }: Props) {
-      const Icon = (Icons as any)[course.icon_name] || Icons.Book;
+    const Icon = (Icons as any)[course.icon_name] || Icons.Book;
     return (
         <motion.article
-            whileHover={{ scale: 1.02 }}
+            initial="initial"
+            whileHover="hover"
+            variants={{
+                initial: { scale: 1 },
+                hover: { scale: 1.02 },
+            }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="relative rounded-2xl bg-neutral-900 p-4 overflow-hidden"
+            className="block group relative rounded-2xl bg-neutral-900 p-4 overflow-hidden"
         >
-           
+
             <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent pointer-events-none" />
-          
+
             <motion.div
                 className="absolute inset-0 rounded-2xl"
                 initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
+                variants={{
+                    initial: { opacity: 0 },
+                    hover: { opacity: 1 },
+                }}
                 style={{
                     background:
-                        "linear-gradient(120deg, rgba(99,102,241,0.15), transparent)",
+                        "linear-gradient(120deg, rgba(99,102,241,0.25), transparent)",
                 }}
             />
             <div className="relative z-10 flex flex-col h-full justify-between">
@@ -39,7 +47,7 @@ export default function CourseCard({ course }: Props) {
                         <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${course.progress}%` }}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 2 }}
                             className="h-full bg-indigo-500"
                         />
                     </div>
