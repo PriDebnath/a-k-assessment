@@ -34,5 +34,17 @@ A modern, animated student dashboard built with Next.js App Router, Supabase, Ta
 - Managing server/client with animations(using server and client component cautiously, solved the issue)
 - Rendering dynamic icons from DB(importing all icons, solved the issue)
 
+
+
 ---
+## Set Up Guide
+```
+npm run corepack:enable
+``` 
+```
+pnpm install
+``` 
+```
+npm run dev
+```
 
