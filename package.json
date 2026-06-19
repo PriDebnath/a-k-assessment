@@ -8,6 +8,8 @@
     "url": "https://github.com/PriDebnath/portfolio-v2"
   },
   "scripts": {
+    "corepack:enable": "corepack enable",
+    "install:packages": "pnpm install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
