@@ -11,6 +11,10 @@ A modern, animated student dashboard built with Next.js App Router, Supabase, Ta
 <img height="480" src="public/images/app-demo-desktop-19-06-2026.png" />
 </a>
 
+### 🔴 🖼️ Live
+https://a-k-assessment-by-pritam.vercel.app/
+
+
 -------
 
 ##  Highlights
