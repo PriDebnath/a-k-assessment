@@ -2,28 +2,16 @@
 import { Course } from "@/types";
 import { supabase } from "@/lib/supabase";
 
-interface Result {
-    status: "error" | "success"
-    data?: Course[];
-    error?: unknown;
-}
-
-export async function getCourses(): Promise<Result> {
+export async function getCourses(): Promise<Course[]> {
     const { data, error } = await supabase
         .from("courses")
         .select("*")
         .order("created_at", { ascending: false });
 
     if (error) {
-        console.error("Error fetching courses:", error);
-        return {
-            status: "error",
-            error: error
-        };
-    } else {
-        return {
-            status: "success",
-            data: data as Course[]
-        }
+        throw new Error("Failed to fetch courses");
     }
+    const result: Course[] = data ?? [] satisfies Course[]
+    return result
 }
+

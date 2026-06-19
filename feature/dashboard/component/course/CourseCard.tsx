@@ -1,6 +1,7 @@
 "use client";
 
 import { Course } from "@/types";
+import { useCountUp } from 'react-countup';
 import { delay, motion } from "framer-motion";
 import * as Icons from "lucide-react"; // important to display icon dynamacly
 
@@ -12,6 +13,11 @@ interface Props {
 export default function CourseCard({ course, delay }: Props) {
     const Icon = (Icons as any)[course.icon_name] || Icons.Book;
 
+    const Counter = () => {
+        useCountUp({ ref: course.id, end: course.progress, duration: Math.ceil( 5 + delay) });
+        return <span id={course.id} />;
+    };
+
     return (
         <motion.article
             initial="initial"
@@ -21,7 +27,7 @@ export default function CourseCard({ course, delay }: Props) {
                 hover: { scale: 1.02 },
             }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="block group relative rounded-2xl bg-neutral-900 p-4 overflow-hidden"
+            className="block h-full group relative rounded-2xl bg-neutral-900 p-4 overflow-hidden"
         >
 
             <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent pointer-events-none" />
@@ -49,12 +55,12 @@ export default function CourseCard({ course, delay }: Props) {
                         <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${course.progress}%` }}
-                            transition={{ duration: Math.ceil (2 + delay) }}
+                            transition={{ duration: Math.ceil(2 + delay) }}
                             className="h-full bg-indigo-500"
                         />
                     </div>
                     <p className="text-xs text-neutral-400 mt-1">
-                        {course.progress}%
+                        <Counter />%
                     </p>
                 </div>
             </div>

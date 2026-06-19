@@ -20,7 +20,7 @@ export default function AnimatedGrid({
           },
         },
       }}
-      className="grid grid-cols-2 md:grid-cols-4 gap-4"
+      className="grid grid-cols-2 md:grid-cols-4 gap-4 items-stretch"
     >
       {children}
     </motion.section>
