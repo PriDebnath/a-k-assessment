@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import ErrorBoundary from "@/app/component/ErrorBoundary";
 import HeroTile from "@/feature/dashboard/component/HeroTile";
 import Courses from "@/feature/dashboard/component/course/Courses";
 import ActivityTile from "@/feature/dashboard/component/ActivityTile";
@@ -15,13 +16,15 @@ export default async function Page() {
       <AnimatedItem>
         <HeroTile />
       </AnimatedItem>
-      
-      <Suspense
-        fallback={
-          <CourseCardSkeleton />
-        }>
-        <CoursesWrapper />   {/*  Server component */}
-      </Suspense>
+
+      <ErrorBoundary errorMessage="Failed to fetch courses">
+        <Suspense
+          fallback={
+            <CourseCardSkeleton />
+          }>
+          <CoursesWrapper />   {/*  Server component */}
+        </Suspense>
+      </ErrorBoundary >
 
       <AnimatedItem >
         <ActivityTile />
