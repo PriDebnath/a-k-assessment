@@ -2,6 +2,11 @@
   "name": "a-k-assessment",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Pritam Debnath",
+    "email": "debnathpritam0802@gmail.com",
+    "url": "https://github.com/PriDebnath/portfolio-v2"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
