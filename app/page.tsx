@@ -3,7 +3,7 @@ import ErrorBoundary from "@/app/component/ErrorBoundary";
 import HeroTile from "@/feature/dashboard/component/HeroTile";
 import Courses from "@/feature/dashboard/component/course/Courses";
 import ActivityTile from "@/feature/dashboard/component/ActivityTile";
-import DashboardLayout from "@/feature/dashboard/layout/DashboardLayout";
+import DashboardLayout from "@/feature/dashboard/component/layout/DashboardLayout";
 import AnimatedGrid from "@/feature/dashboard/component/animated/AnimatedGrid";
 import AnimatedItem from "@/feature/dashboard/component/animated/AnimatedItem";
 import CoursesWrapper from "@/feature/dashboard/component/course/CoursesWrapper";
