@@ -22,9 +22,11 @@ export default function CourseCard({ course, delay }: Props) {
         <motion.article
             initial="initial"
             whileHover="hover"
+            whileTap="tap"
             variants={{
                 initial: { scale: 1 },
                 hover: { scale: 1.02 },
+                tap: { scale: 0.98 },
             }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             className="block h-full group relative rounded-2xl bg-neutral-900 p-4 overflow-hidden"
@@ -39,6 +41,7 @@ export default function CourseCard({ course, delay }: Props) {
                 variants={{
                     initial: { opacity: 0 },
                     hover: { opacity: 1 },
+                    tap: { opacity: 1 },
                 }}
                 style={{
                     background:
